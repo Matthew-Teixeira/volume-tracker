@@ -1,23 +1,34 @@
 const { Schema, model } = require("mongoose");
 
-const tankSchema = new Schema({
-    zone:{
-        type: String,
-        required: true,
+const tankSchema = new Schema(
+  {
+    zone: {
+      type: String,
+      required: true,
     },
     tankName: {
-        type: String,
-        required: true,
-        unique: true
+      type: String,
+      required: true,
+      unique: true,
     },
     volumes: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: "Volume"
-        }
-    ]
-})
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Volume",
+      },
+    ],
+  },
+  {
+    toJSON: {
+      virtuals: true,
+    },
+  }
+);
 
-const Tank = model('Tank', tankSchema);
+tankSchema.virtual("volumeCount").get(function () {
+  return this.volumes.length;
+});
+
+const Tank = model("Tank", tankSchema);
 
 module.exports = Tank;
