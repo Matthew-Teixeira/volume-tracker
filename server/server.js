@@ -3,11 +3,13 @@ const dotenv = require("dotenv").config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 const db = require("./config/connection");
+const cors = require("cors");
 //const { errorHandler } = require("./middleware/errorMiddleware");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
+app.use(cors())
 
 app.use(require("./routes"));
 
