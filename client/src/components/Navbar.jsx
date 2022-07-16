@@ -28,7 +28,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <div className="flex-shrink-0 text-lg lg:text-xl font-bold text-[#337499]">
               <p>AppSolo</p>
-              <p>Tech.</p>
+              <p className="text-right">Tech.</p>
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
@@ -50,16 +50,14 @@ const Navbar = () => {
                         Dashboard
                       </p>
                     </Link>
-
-                    <Link to={"/admin"}>
+                    {/* <Link to={"/admin"}>
                       <p className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">
                         Admin
                       </p>
-                    </Link>
-
+                    </Link> */}
                     <p
                       onClick={logout}
-                      className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                      className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium cursor-pointer"
                     >
                       Sign Out
                     </p>
