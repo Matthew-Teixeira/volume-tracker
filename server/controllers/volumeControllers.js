@@ -8,11 +8,10 @@ const getVolume = asyncHandler(async (req, res) => {
 });
 
 const addVolume = asyncHandler(async (req, res) => {
-  const { tankName } = req.params;
-  console.log(tankName);
+  const { id } = req.params;
   const newVolume = await Volume.create(req.body);
   const tank = await Tank.findOneAndUpdate(
-    { tankName },
+    { _id: id },
     { $push: { volumes: newVolume._id } },
     { new: true }
   )
