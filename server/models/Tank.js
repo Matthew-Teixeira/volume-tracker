@@ -11,6 +11,10 @@ const tankSchema = new Schema(
       required: true,
       unique: true,
     },
+    height: {
+      type: Number,
+      required: true,
+    },
     volumes: [
       {
         type: Schema.Types.ObjectId,
@@ -22,6 +26,7 @@ const tankSchema = new Schema(
     toJSON: {
       virtuals: true,
     },
+    id: false,
   }
 );
 

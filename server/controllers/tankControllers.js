@@ -13,8 +13,8 @@ const getTank = asyncHandler(async (req, res) => {
 });
 
 const addTank = asyncHandler(async (req, res) => {
-  const { zone, tankName } = req.body;
-  const newTank = await Tank.create({ zone, tankName });
+  const { zone, tankName, height } = req.body;
+  const newTank = await Tank.create({ zone, tankName, height });
   return res.status(200).json(newTank);
 });
 
