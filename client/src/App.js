@@ -4,6 +4,7 @@ import Dashboard from "./Pages/Dashboard";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
+import Volumes from "./Pages/Volumes";
 
 function App() {
   return (
@@ -11,12 +12,13 @@ function App() {
       <header>
         <Navbar />
       </header>
-      <main className="h-full bg-indigo-50">
+      <main className="h-full w-full bg-indigo-50">
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Register/>}/>
-        <Route path="dashboard" element={<Dashboard/>}/>
+        <Route path="/dashboard" element={<Dashboard/>}/>
+        <Route path="/volumes/:id" element={<Volumes/>}/>
       </Routes>
       </main>
     </Router>

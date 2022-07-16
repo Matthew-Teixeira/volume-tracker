@@ -32,11 +32,6 @@ const Navbar = () => {
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
-                <Link to={"/"}>
-                  <p className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">
-                    Home
-                  </p>
-                </Link>
 
                 {Auth.loggedIn() ? (
                   <>
@@ -63,7 +58,11 @@ const Navbar = () => {
                     </p>
                   </>
                 ) : (
-                  ""
+                  <Link to={"/"}>
+                  <p className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">
+                    Home
+                  </p>
+                </Link>
                 )}
               </div>
             </div>
