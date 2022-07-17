@@ -32,7 +32,6 @@ const Navbar = () => {
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
-
                 {Auth.loggedIn() ? (
                   <>
                     <Link to={"/"}>
@@ -45,11 +44,11 @@ const Navbar = () => {
                         Dashboard
                       </p>
                     </Link>
-                    {/* <Link to={"/admin"}>
+                    <Link to={"/admin"}>
                       <p className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">
                         Admin
                       </p>
-                    </Link> */}
+                    </Link>
                     <p
                       onClick={logout}
                       className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium cursor-pointer"
@@ -59,10 +58,10 @@ const Navbar = () => {
                   </>
                 ) : (
                   <Link to={"/"}>
-                  <p className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">
-                    Home
-                  </p>
-                </Link>
+                    <p className=" hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium">
+                      Home
+                    </p>
+                  </Link>
                 )}
               </div>
             </div>

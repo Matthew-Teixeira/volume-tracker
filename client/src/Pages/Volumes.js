@@ -1,11 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import VolumeTable from "../components/VolumeTable";
+import { useNavigate } from "react-router-dom";
+import Auth from "../utils/auth";
 
 const Volumes = () => {
+  const navigate = useNavigate()
   const [tankId, setTankId] = useState("");
   const [tankData, setTankData] = useState({});
   const [loading, setLoading] = useState(true);
+
+  const userLoggedIn = Auth.loggedIn();
+
+  useEffect(() => {
+    if (!userLoggedIn) {
+      navigate('/login')
+    }
+  }, [userLoggedIn, navigate])
 
   const getTankId = () => {
     let path = window.location.pathname.split("/");

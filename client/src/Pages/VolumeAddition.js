@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll";
+import { useNavigate } from "react-router-dom";
 import FracTank from "../utils/volumeCalcs";
+import Auth from "../utils/auth";
 
 const VolumeAddition = () => {
+  const navigate = useNavigate();
   const [tankId, setTankId] = useState("");
   const [tankData, setTankData] = useState({});
   const [loading, setLoading] = useState(true);
@@ -11,6 +14,14 @@ const VolumeAddition = () => {
     dtp: 0,
     dtw: 0,
   });
+
+  const userLoggedIn = Auth.loggedIn();
+
+  useEffect(() => {
+    if (!userLoggedIn) {
+      navigate("/login");
+    }
+  }, [userLoggedIn, navigate]);
 
   const getTankId = () => {
     let path = window.location.pathname.split("/");
@@ -76,7 +87,7 @@ const VolumeAddition = () => {
       body: JSON.stringify({
         totalVol,
         waterVol,
-        productVol
+        productVol,
       }),
       headers: {
         "Content-Type": "application/json",
@@ -95,8 +106,13 @@ const VolumeAddition = () => {
 
   const submitVolumes = (event) => {
     event.preventDefault();
-    postVolumes(volumeData.totalVol, volumeData.waterVol, volumeData.productVol, tankId);
-  }
+    postVolumes(
+      volumeData.totalVol,
+      volumeData.waterVol,
+      volumeData.productVol,
+      tankId
+    );
+  };
 
   return (
     <>

@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import AddTank from "./Pages/AddTank";
+import Admin from "./Pages/Admin";
 import Dashboard from "./Pages/Dashboard";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
@@ -14,14 +16,16 @@ function App() {
         <Navbar />
       </header>
       <main className="h-full w-full bg-indigo-50">
-      <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/register" element={<Register/>}/>
-        <Route path="/dashboard" element={<Dashboard/>}/>
-        <Route path="/volumes/:id" element={<Volumes/>}/>
-        <Route path="/addVolume/:id" element={<VolumeAddition />}/>
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/volumes/:id" element={<Volumes />} />
+          <Route path="/addVolume/:id" element={<VolumeAddition />} />
+          <Route path="/admin/addTank" element={<AddTank />} />
+          <Route path="/admin" element={<Admin />} />
+        </Routes>
       </main>
     </Router>
   );
