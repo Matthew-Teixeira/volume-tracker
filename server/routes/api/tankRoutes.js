@@ -6,6 +6,7 @@ const {
   updateTank,
   deleteTank,
 } = require("../../controllers/tankControllers");
+const protected = require("../../middleware/authMiddleware")
 
 router.get("/", getAllTanks);
 router.get("/:id", getTank);
