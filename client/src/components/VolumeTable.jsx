@@ -5,18 +5,6 @@ import {date, time} from "../utils/time-date"
 const VolumeTable = ({volumeData, tankData}) => {
   return (
     <>
-    <h3 className='text-center text-xl font-bold'>{tankData.tankName.slice(0, 1) + tankData.tankName[1].toUpperCase()}</h3>
-    <table className="divide-y divide-gray-300 ">
-                <thead className="bg-gray-50">
-                  <tr>
-                    <th className="px-6 py-2 text-xs text-gray-500">Date</th>
-                    <th className="px-6 py-2 text-xs text-gray-500">Time</th>
-                    <th className="px-6 py-2 text-xs text-gray-500">Total</th>
-                    <th className="px-6 py-2 text-xs text-gray-500">PCW</th>
-                    <th className="px-6 py-2 text-xs text-gray-500">LNAPL</th>
-                    <th className="px-6 py-2 text-xs text-gray-500">Edit</th>
-                  </tr>
-                </thead>
                 <tbody className="bg-white divide-y divide-gray-300">
                   <tr className="whitespace-nowrap">
                     <td className="px-6 py-4">
@@ -38,7 +26,7 @@ const VolumeTable = ({volumeData, tankData}) => {
                     </td>
                   </tr>
                 </tbody>
-              </table>
+              
               </>
   )
 }

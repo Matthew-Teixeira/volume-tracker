@@ -4,6 +4,7 @@ import Dashboard from "./Pages/Dashboard";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
+import VolumeAddition from "./Pages/VolumeAddition";
 import Volumes from "./Pages/Volumes";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/register" element={<Register/>}/>
         <Route path="/dashboard" element={<Dashboard/>}/>
         <Route path="/volumes/:id" element={<Volumes/>}/>
+        <Route path="/addVolume/:id" element={<VolumeAddition />}/>
       </Routes>
       </main>
     </Router>

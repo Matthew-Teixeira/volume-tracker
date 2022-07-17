@@ -42,7 +42,7 @@ const Volumes = () => {
   return (
     <div className="min-h-[calc(100vh-64px)] h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <Link to={`/addVolume/${tankData._id}`}>
-            <button className="w-full rounded-md bg-[#337499]  py-2 text-indigo-100 hover:bg-[#4f90b6] hover:shadow-lg duration-75 text-lg my-4">
+            <button className="w-full block mx-auto max-w-[300px] rounded-md bg-[#337499]  py-2 text-indigo-100 hover:bg-[#4f90b6] hover:shadow-lg duration-75 text-lg my-4">
               Add Volume
             </button>
           </Link>
@@ -52,9 +52,22 @@ const Volumes = () => {
         <div className="overflow-x-auto container flex md:justify-center mx-auto">
           <div className="flex flex-col">
               <div className="border-b border-gray-200 shadow">
+              <h3 className='text-center text-xl font-bold'>{tankData.tankName.slice(0, 1) + tankData.tankName[1].toUpperCase()}</h3>
+    <table className="divide-y divide-gray-300 ">
+                <thead className="bg-gray-50">
+                  <tr>
+                    <th className="px-6 py-2 text-xs text-gray-500">Date</th>
+                    <th className="px-6 py-2 text-xs text-gray-500">Time</th>
+                    <th className="px-6 py-2 text-xs text-gray-500">Total</th>
+                    <th className="px-6 py-2 text-xs text-gray-500">PCW</th>
+                    <th className="px-6 py-2 text-xs text-gray-500">LNAPL</th>
+                    <th className="px-6 py-2 text-xs text-gray-500">Edit</th>
+                  </tr>
+                </thead>
                 {tankData.volumes.map((volume) => (
                   <VolumeTable key={volume._id} volumeData={volume} tankData={tankData} />
                 ))}
+                </table>
               </div>
           </div>
         </div>

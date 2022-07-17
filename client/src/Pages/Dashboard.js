@@ -17,7 +17,6 @@ const Dashboard = () => {
       })
         .then((response) => response.json())
         .then((data) => {
-          console.log("Success:", data);
           setTankData(data);
           setLoading(false);
         })
