@@ -6,6 +6,7 @@ import Dashboard from "./Pages/Dashboard";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
+import UpdateTanks from "./Pages/UpdateTanks";
 import VolumeAddition from "./Pages/VolumeAddition";
 import Volumes from "./Pages/Volumes";
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/addVolume/:id" element={<VolumeAddition />} />
           <Route path="/admin/addTank" element={<AddTank />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/admin/viewTanks" element={<UpdateTanks />} />
         </Routes>
       </main>
     </Router>
