@@ -9,7 +9,7 @@ const UpdateTanksCard = ({tankData}) => {
         <p>Height: {tankData.height}</p>
         <p>Measurment Entries: {tankData.volumeCount}</p>
         <div className="p-5">
-          <Link to={`/volumes/${tankData._id}`}>
+          <Link to={`/admin/updateTank/${tankData.tankName}/${tankData._id}`}>
             <button className="w-full rounded-md bg-[#339970]  py-2 text-indigo-100 hover:bg-[#4fb69b] hover:shadow-lg duration-75 text-lg">
               Update Tank
             </button>

@@ -42,7 +42,6 @@ const VolumeAddition = () => {
       })
         .then((response) => response.json())
         .then((data) => {
-          console.log("Success:", data);
           setTankData(data);
           setLoading(false);
         })
@@ -76,10 +75,6 @@ const VolumeAddition = () => {
     getTankId();
   }, [tankId]);
 
-  useEffect(() => {
-    console.log(volumeData);
-  }, [volumeData]);
-
   const postVolumes = async (totalVol, waterVol, productVol, id) => {
     fetch(`http://localhost:5000/api/volumes/addVolume/${id}`, {
       mode: "cors",
@@ -96,7 +91,6 @@ const VolumeAddition = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("Success:", data);
         window.location.assign(`/volumes/${tankId}`);
       })
       .catch((err) => {

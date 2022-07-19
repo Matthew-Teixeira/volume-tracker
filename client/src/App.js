@@ -6,6 +6,7 @@ import Dashboard from "./Pages/Dashboard";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
+import UpdateOneTank from "./Pages/UpdateOneTank";
 import UpdateTanks from "./Pages/UpdateTanks";
 import VolumeAddition from "./Pages/VolumeAddition";
 import Volumes from "./Pages/Volumes";
@@ -27,6 +28,7 @@ function App() {
           <Route path="/admin/addTank" element={<AddTank />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/admin/viewTanks" element={<UpdateTanks />} />
+          <Route path="/admin/updateTank/:tank/:id" element={<UpdateOneTank />} />
         </Routes>
       </main>
     </Router>

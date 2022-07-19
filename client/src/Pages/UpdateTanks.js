@@ -30,7 +30,6 @@ const UpdateTanks = () => {
         .then((data) => {
           setTankData(data);
           setLoading(false);
-          console.log(tankData);
         })
         .catch((err) => {
           console.log(err);
@@ -46,7 +45,7 @@ const UpdateTanks = () => {
             loading ? (
                 <div>Loading...</div>
             ) : (
-                tankData.map(tank => <UpdateTanksCard tankData={tank}/>)
+                tankData.map(tank => <UpdateTanksCard key={tank._id} tankData={tank}/>)
             )
         }
     </div>
