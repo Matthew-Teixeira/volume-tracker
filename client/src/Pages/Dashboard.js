@@ -9,6 +9,7 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(true);
 
   const userLoggedIn = Auth.loggedIn();
+  const userToken = Auth.getToken()
 
   useEffect(() => {
     if (!userLoggedIn) {
@@ -22,6 +23,7 @@ const Dashboard = () => {
         mode: "cors",
         method: "GET",
         headers: {
+          'Authorization': `Bearer ${userToken}`,
           "Content-Type": "application/json",
           "Access-Control-Allow-Origin": "*",
         },

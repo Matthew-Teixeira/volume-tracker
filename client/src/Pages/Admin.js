@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaEnvelope, FaGlobe, FaClipboardList, FaBolt } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import Auth from "../utils/auth";
 
 const Admin = () => {
+  const navigate = useNavigate();
+  const userLoggedIn = Auth.loggedIn();
+
+  useEffect(() => {
+    if (!userLoggedIn) {
+      navigate("/login");
+    }
+  }, [userLoggedIn, navigate]);
+
   return (
     <div className="h-[calc(100vh-64px)] flex justify-center items-center w-full">
       <div className="py-12 bg-white">
@@ -59,7 +70,7 @@ const Admin = () => {
                   <dt>
                     <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-[#337499] text-white">
                       {/* <!-- Heroicon name: outline/lightning-bolt --> */}
-                      <FaBolt size={30}/>
+                      <FaBolt size={30} />
                     </div>
                     <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
                       New Tanks

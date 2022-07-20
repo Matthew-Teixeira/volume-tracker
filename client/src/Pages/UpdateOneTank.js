@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import Auth from "../utils/auth";
 
 const UpdateOneTank = () => {
-  const navigate = useNavigate();
   const [tankName, setTankName] = useState("");
   const [tankId, setTankId] = useState("");
   const [loading, setLoading] = useState(true);
@@ -13,7 +12,9 @@ const UpdateOneTank = () => {
     height: 0,
   });
 
+  const navigate = useNavigate();
   const userLoggedIn = Auth.loggedIn();
+  const userToken = Auth.getToken()
 
   useEffect(() => {
     if (!userLoggedIn) {
@@ -40,6 +41,7 @@ const UpdateOneTank = () => {
         height: parseFloat(height),
       }),
       headers: {
+        'Authorization': `Bearer ${userToken}`,
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
       },
@@ -67,6 +69,7 @@ const UpdateOneTank = () => {
       mode: "cors",
       method: "DELETE",
       headers: {
+        'Authorization': `Bearer ${userToken}`,
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
       },

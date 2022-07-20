@@ -5,12 +5,13 @@ import { useNavigate } from "react-router-dom";
 import Auth from "../utils/auth";
 
 const Volumes = () => {
-  const navigate = useNavigate()
   const [tankId, setTankId] = useState("");
   const [tankData, setTankData] = useState({});
   const [loading, setLoading] = useState(true);
 
+  const navigate = useNavigate()
   const userLoggedIn = Auth.loggedIn();
+  const userToken = Auth.getToken();
 
   useEffect(() => {
     if (!userLoggedIn) {
@@ -31,6 +32,7 @@ const Volumes = () => {
         mode: "cors",
         method: "GET",
         headers: {
+          Authorization: `Bearer ${userToken}`,
           "Content-Type": "application/json",
           "Access-Control-Allow-Origin": "*",
         },

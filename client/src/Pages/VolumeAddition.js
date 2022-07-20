@@ -5,7 +5,6 @@ import FracTank from "../utils/volumeCalcs";
 import Auth from "../utils/auth";
 
 const VolumeAddition = () => {
-  const navigate = useNavigate();
   const [tankId, setTankId] = useState("");
   const [tankData, setTankData] = useState({});
   const [loading, setLoading] = useState(true);
@@ -15,7 +14,9 @@ const VolumeAddition = () => {
     dtw: 0,
   });
 
+  const navigate = useNavigate();
   const userLoggedIn = Auth.loggedIn();
+  const userToken = Auth.getToken();
 
   useEffect(() => {
     if (!userLoggedIn) {
@@ -36,6 +37,7 @@ const VolumeAddition = () => {
         mode: "cors",
         method: "GET",
         headers: {
+          Authorization: `Bearer ${userToken}`,
           "Content-Type": "application/json",
           "Access-Control-Allow-Origin": "*",
         },
@@ -85,6 +87,7 @@ const VolumeAddition = () => {
         productVol,
       }),
       headers: {
+        Authorization: `Bearer ${userToken}`,
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
       },

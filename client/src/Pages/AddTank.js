@@ -3,14 +3,14 @@ import { useNavigate } from "react-router-dom";
 import Auth from "../utils/auth";
 
 const AddTank = () => {
-  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     zone: "",
     tankName: "",
     height: 0,
   });
-
+  const navigate = useNavigate();
   const userLoggedIn = Auth.loggedIn();
+  const userToken = Auth.getToken()
 
   useEffect(() => {
     if (!userLoggedIn) {
@@ -28,6 +28,7 @@ const AddTank = () => {
         height: parseFloat(height)
       }),
       headers: {
+        'Authorization': `Bearer ${userToken}`,
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
       },
