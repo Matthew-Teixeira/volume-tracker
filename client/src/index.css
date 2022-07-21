@@ -10,3 +10,49 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.pagination {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5rem;
+  font-size: 1.2rem;
+  gap: 5px;
+  margin-top: 2rem;
+}
+
+.pagination .page-num{
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-weight: 400;
+}
+
+.pagination .page-num:hover {
+  background-color: #337499;
+  color: #fff;
+}
+
+.pagination .active {
+  background-color: #337499;
+  color: #fff;
+}
+
+.link {
+  border: solid #337499 2px;
+}
+
+@media only screen and (max-width: 600px) {
+  .pagination {
+    font-size: 1rem;
+    gap: 2px;
+  }
+  
+  .pagination .page-num{
+    padding: 4px 8px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-weight: 300;
+  }
+}
