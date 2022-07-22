@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import AddTank from "./Pages/AddTank";
 import Admin from "./Pages/Admin";
 import Dashboard from "./Pages/Dashboard";
+import EditVolume from "./Pages/EditVolume";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
@@ -28,7 +29,11 @@ function App() {
           <Route path="/admin/addTank" element={<AddTank />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/admin/viewTanks" element={<UpdateTanks />} />
-          <Route path="/admin/updateTank/:tank/:id" element={<UpdateOneTank />} />
+          <Route
+            path="/admin/updateTank/:tank/:id"
+            element={<UpdateOneTank />}
+          />
+          <Route path="/editVolume/:id" element={<EditVolume />} />
         </Routes>
       </main>
     </Router>
