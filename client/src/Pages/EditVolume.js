@@ -37,7 +37,7 @@ const EditVolume = () => {
   useEffect(() => {
     getVolumeId();
     const getVolumeData = async (id) => {
-      fetch(`http://localhost:5000/api/volumes/${id}`, {
+      fetch(`/api/volumes/${id}`, {
         mode: "cors",
         method: "GET",
         headers: {
@@ -77,7 +77,7 @@ const EditVolume = () => {
   }, [voluemData]);
 
   const updateVolume = async (totalVol, waterVol, productVol) => {
-    fetch(`http://localhost:5000/api/volumes/${volumeId}`, {
+    fetch(`/api/volumes/${volumeId}`, {
       mode: "cors",
       method: "PUT",
       body: JSON.stringify({

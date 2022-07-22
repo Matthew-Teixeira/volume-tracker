@@ -32,7 +32,7 @@ const UpdateOneTank = () => {
   }, []);
 
   const updateTank = async (zone, tankName, height) => {
-    await fetch(`http://localhost:5000/api/tanks/updateTank/${tankId}`, {
+    await fetch(`/api/tanks/updateTank/${tankId}`, {
       mode: "cors",
       method: "PUT",
       body: JSON.stringify({
@@ -65,7 +65,7 @@ const UpdateOneTank = () => {
   };
 
   const removeTank = async () => {
-    await fetch(`http://localhost:5000/api/tanks/deleteTank/${tankId}`, {
+    await fetch(`/api/tanks/deleteTank/${tankId}`, {
       mode: "cors",
       method: "DELETE",
       headers: {

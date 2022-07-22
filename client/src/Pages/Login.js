@@ -8,7 +8,7 @@ const Login = () => {
   });
 
   const loginUser = async (email, password) => {
-    fetch("http://localhost:5000/api/user/login", {
+    fetch("/api/user/login", {
       mode: "cors",
       method: "POST",
       body: JSON.stringify({

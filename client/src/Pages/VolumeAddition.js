@@ -33,7 +33,7 @@ const VolumeAddition = () => {
   useEffect(() => {
     getTankId();
     const getTankData = async (id) => {
-      fetch(`http://localhost:5000/api/tanks/${id}`, {
+      fetch(`/api/tanks/${id}`, {
         mode: "cors",
         method: "GET",
         headers: {
@@ -78,7 +78,7 @@ const VolumeAddition = () => {
   }, [tankId]);
 
   const postVolumes = async (totalVol, waterVol, productVol, id) => {
-    fetch(`http://localhost:5000/api/volumes/addVolume/${id}`, {
+    fetch(`/api/volumes/addVolume/${id}`, {
       mode: "cors",
       method: "POST",
       body: JSON.stringify({

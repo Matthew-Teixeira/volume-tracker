@@ -10,7 +10,7 @@ const Register = () => {
   });
 
   const registerUser = async (username, email, password, confirmPassword) => {
-    fetch("http://localhost:5000/api/user/register", {
+    fetch("/api/user/register", {
       mode: "cors",
       method: "POST",
       body: JSON.stringify({

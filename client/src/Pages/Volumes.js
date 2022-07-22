@@ -32,7 +32,7 @@ const Volumes = () => {
   useEffect(() => {
     getTankId();
     const getTankData = async (id) => {
-      fetch(`http://localhost:5000/api/tanks/${id}`, {
+      fetch(`/api/tanks/${id}`, {
         mode: "cors",
         method: "GET",
         headers: {

@@ -19,7 +19,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     const getDashData = async () => {
-      fetch("http://localhost:5000/api/dashboard", {
+      fetch("/api/dashboard", {
         mode: "cors",
         method: "GET",
         headers: {

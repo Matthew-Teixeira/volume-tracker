@@ -19,7 +19,7 @@ const AddTank = () => {
   }, [userLoggedIn, navigate]);
 
   const postNewTank = async (zone, tankName, height) => {
-    await fetch("http://localhost:5000/api/tanks/addTank", {
+    await fetch("/api/tanks/addTank", {
       mode: "cors",
       method: "POST",
       body: JSON.stringify({

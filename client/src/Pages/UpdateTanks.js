@@ -19,7 +19,7 @@ const UpdateTanks = () => {
 
   useEffect(() => {
     const getDashData = async () => {
-      fetch("http://localhost:5000/api/tanks", {
+      fetch("/api/tanks", {
         mode: "cors",
         method: "GET",
         headers: {
