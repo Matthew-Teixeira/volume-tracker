@@ -1,0 +1,22 @@
+{
+  "name": "volume-tracker",
+  "version": "1.0.0",
+  "description": "Volume Tracker Application",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "build": "cd client && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ApolloSolo/volume-tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ApolloSolo/volume-tracker/issues"
+  },
+  "homepage": "https://github.com/ApolloSolo/volume-tracker#readme"
+}
