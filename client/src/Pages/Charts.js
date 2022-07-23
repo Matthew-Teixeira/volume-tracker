@@ -57,7 +57,14 @@ const Charts = () => {
 
   return (
     <div>
-      {loading ? <div>Loading...</div> : <LineGraph tankData={tankData} />}
+      {loading ? (
+        <div>Loading...</div>
+      ) : (
+     
+          
+          <LineGraph tankData={tankData} />
+        
+      )}
     </div>
   );
 };

@@ -48,7 +48,7 @@ const UpdateOneTank = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        navigate("/dashboard");
+        navigate("/admin");
       })
       .catch((err) => {
         console.log(err);
@@ -76,7 +76,7 @@ const UpdateOneTank = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        navigate("/dashboard");
+        navigate("/admin");
       })
       .catch((err) => {
         console.log(err);

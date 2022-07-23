@@ -27,16 +27,16 @@ const LineGraph = ({ tankData }) => {
             label: "Product",
             data: volumeData.map((volume) => volume.productVol),
             backgroundColor: [
-              "rgba(200,19,92,1)",
+              "rgba(200,100,92,1)",
             ],
-            borderColor: "red",
+            borderColor: "rgba(200,19,92,1)",
             borderWidth: 1,
           },
           {
             label: "Total",
             data: volumeData.map((volume) => volume.totalVol),
             backgroundColor: [
-              "rgba(20,19,92,1)",
+              "rgb(100,100,100)",
             ],
             borderColor: "black",
             borderWidth: 1,
@@ -54,6 +54,7 @@ const LineGraph = ({ tankData }) => {
         <div>Loading Again...</div>
       ) : (
         <div className="w-[3000px]">
+          <h2 className="text-center font-bold text-2xl">{tankData.tankName}</h2>
           <Line data={waterData} />
         </div>
       )}
