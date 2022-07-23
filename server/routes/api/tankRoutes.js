@@ -8,8 +8,8 @@ const {
 } = require("../../controllers/tankControllers");
 const protected = require("../../middleware/authMiddleware")
 
-router.get("/", protected, getAllTanks);
 router.get("/:id", protected, getTank);
+router.get("/", protected, getAllTanks);
 router.post("/addTank", protected, addTank);
 router.put("/updateTank/:id", protected, updateTank);
 router.delete("/deleteTank/:id", protected, deleteTank);
