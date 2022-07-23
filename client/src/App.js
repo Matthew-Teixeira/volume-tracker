@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import AddTank from "./Pages/AddTank";
 import Admin from "./Pages/Admin";
+import Charts from "./Pages/Charts";
 import Dashboard from "./Pages/Dashboard";
 import EditVolume from "./Pages/EditVolume";
 import Home from "./Pages/Home";
@@ -34,6 +35,7 @@ function App() {
             element={<UpdateOneTank />}
           />
           <Route path="/editVolume/:id" element={<EditVolume />} />
+          <Route path="/charts/:id" element={<Charts />} />
         </Routes>
       </main>
     </Router>

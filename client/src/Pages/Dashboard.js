@@ -4,10 +4,10 @@ import DashTankCard from "../components/DashTankCard";
 import Auth from "../utils/auth";
 
 const Dashboard = () => {
-  const navigate = useNavigate()
   const [tankData, setTankData] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const navigate = useNavigate()
   const userLoggedIn = Auth.loggedIn();
   const userToken = Auth.getToken()
 

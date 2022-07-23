@@ -81,11 +81,18 @@ const Volumes = () => {
 
   return (
     <div className="min-h-[calc(100vh-64px)] h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div className="flex gap-10 justify-center">
       <Link to={`/addVolume/${tankData._id}`}>
-        <button className="w-full block mx-auto max-w-[300px] rounded-md bg-[#337499]  py-2 text-indigo-100 hover:bg-[#4f90b6] hover:shadow-lg duration-75 text-lg my-4">
+        <button className="w-full block mx-auto max-w-[300px] rounded-md bg-[#337499]  py-2 text-indigo-100 hover:bg-[#4f90b6] hover:shadow-lg duration-75 text-lg my-4 px-4">
           Add Volume
         </button>
       </Link>
+      <Link to={`/charts/${tankData._id}`}>
+        <button className="w-full block mx-auto max-w-[300px] rounded-md bg-[#337499]  py-2 text-indigo-100 hover:bg-[#4f90b6] hover:shadow-lg duration-75 text-lg my-4 px-4">
+          View Charts
+        </button>
+      </Link>
+      </div>
       {loading || loading2 ? (
         <div className="mt-24 flex justify-center items-center">
           <img alt="loading" src={loader} />
