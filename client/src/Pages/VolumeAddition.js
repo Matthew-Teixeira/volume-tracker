@@ -181,7 +181,7 @@ const VolumeAddition = () => {
                 false
               ) : (
                 <Link
-                  className="mt-4 w-full block bg-[#33996b] text-white hover:bg-[#4f90b6] py-2 rounded-md text-lg tracking-wide hover:shadow-lg duration-75 text-center"
+                  className="mt-4 w-full block bg-[#33996b] text-white hover:bg-[#46b080] py-2 rounded-md text-lg tracking-wide hover:shadow-lg duration-75 text-center cursor-pointer"
                   to="volumes"
                   smooth={true}
                   duration={500}
@@ -228,7 +228,7 @@ const VolumeAddition = () => {
                       type="number"
                       step={0.01}
                       className="bg-indigo-50 px-4 py-2 outline-none rounded-md w-full"
-                      value={volumeData.totalVol}
+                      defaultValue={volumeData.totalVol}
                       required
                     />
                   </div>
@@ -245,7 +245,7 @@ const VolumeAddition = () => {
                       type="number"
                       step={0.01}
                       className="bg-indigo-50 px-4 py-2 outline-none rounded-md w-full"
-                      value={volumeData.waterVol}
+                      defaultValue={volumeData.waterVol}
                       required
                     />
                   </div>
@@ -261,7 +261,7 @@ const VolumeAddition = () => {
                       type="number"
                       step={0.01}
                       className="bg-indigo-50 px-4 py-2 outline-none rounded-md w-full"
-                      value={volumeData.productVol}
+                      defaultValue={volumeData.productVol}
                       required
                     />
                   </div>

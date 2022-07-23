@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {AiOutlineMail, AiFillLock, AiOutlineUserAdd} from "react-icons/ai"
 import Auth from "../utils/auth"
 
 const Register = () => {
@@ -49,10 +50,10 @@ const Register = () => {
       <form onSubmit={onSubmit}>
         <div className="bg-white px-10 py-8 rounded-xl w-screen shadow-md max-w-sm">
           <div className="space-y-4">
-            <h1 className="text-center text-2xl font-semibold text-gray-600">
+            <h1 className="text-center text-3xl font-semibold text-gray-600">
               Register
             </h1>
-            <div>
+            <div className="relative">
               <label
                 htmlFor="username"
                 className="block mb-1 text-gray-600 font-semibold"
@@ -63,11 +64,12 @@ const Register = () => {
               onChange={onChange}
                 name="username"
                 type="text"
-                className="bg-indigo-50 px-4 py-2 outline-none rounded-md w-full"
+                className="bg-indigo-50 px-4 py-2 outline-none rounded-md w-full text-center"
                 required
               />
+              <AiOutlineUserAdd className="absolute left-2 top-10"/>
             </div>
-            <div>
+            <div className="relative">
               <label
                 htmlFor="email"
                 className="block mb-1 text-gray-600 font-semibold"
@@ -78,11 +80,12 @@ const Register = () => {
               onChange={onChange}
                 name="email"
                 type="email"
-                className="bg-indigo-50 px-4 py-2 outline-none rounded-md w-full"
+                className="bg-indigo-50 px-4 py-2 outline-none rounded-md w-full text-center"
                 required
               />
+              <AiOutlineMail className="absolute left-2 top-10"/>
             </div>
-            <div>
+            <div className="relative">
               <label
                 htmlFor="password"
                 className="block mb-1 text-gray-600 font-semibold"
@@ -93,11 +96,12 @@ const Register = () => {
               onChange={onChange}
                 name="password"
                 type="password"
-                className="bg-indigo-50 px-4 py-2 outline-none rounded-md w-full"
+                className="bg-indigo-50 px-4 py-2 outline-none rounded-md w-full text-center"
                 required
               />
+              <AiFillLock className="absolute left-2 top-10"/>
             </div>
-            <div>
+            <div className="relative">
               <label
                 htmlFor="confirmPassword"
                 className="block mb-1 text-gray-600 font-semibold"
@@ -108,9 +112,10 @@ const Register = () => {
               onChange={onChange}
                 name="confirmPassword"
                 type="password"
-                className="bg-indigo-50 px-4 py-2 outline-none rounded-md w-full"
+                className="bg-indigo-50 px-4 py-2 outline-none rounded-md w-full text-center"
                 required
               />
+              <AiFillLock className="absolute left-2 top-10"/>
             </div>
           </div>
           <button

@@ -70,12 +70,6 @@ const EditVolume = () => {
     }
   }, [volumeId, userToken]);
 
-  useEffect(() => {
-    if (voluemData) {
-      console.log(voluemData);
-    }
-  }, [voluemData]);
-
   const updateVolume = async (totalVol, waterVol, productVol) => {
     fetch(`/api/volumes/${volumeId}`, {
       mode: "cors",
@@ -93,7 +87,6 @@ const EditVolume = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("Success:", data);
         navigate("/dashboard");
       })
       .catch((err) => {

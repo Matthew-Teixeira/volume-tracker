@@ -18,26 +18,27 @@ const addVolume = asyncHandler(async (req, res) => {
     .populate("volumes")
     .select("-__v");
 
-    const addVs = async  () => {
-      let total = (Math.random() * (7000 - 2300) + 2300).toFixed(2);
-      let water = (Math.random() * (5000 - 300) + 300).toFixed(2);
-      let prod = (Math.random() * (1500 - 20) + 20).toFixed(2);
-      const newVolume = await Volume.create({
-        "totalVol": total,
-        "waterVol": water,
-        "productVol": prod
-    })
+    // Add a bunch of volume data
+    // const addVs = async  () => {
+    //   let total = (Math.random() * (7000 - 2300) + 2300).toFixed(2);
+    //   let water = (Math.random() * (5000 - 300) + 300).toFixed(2);
+    //   let prod = (Math.random() * (1500 - 20) + 20).toFixed(2);
+    //   const newVolume = await Volume.create({
+    //     "totalVol": total,
+    //     "waterVol": water,
+    //     "productVol": prod
+    // })
 
-    const tank = await Tank.findOneAndUpdate(
-      { _id: id },
-      { $push: { volumes: newVolume._id } },
-      { new: true }
-    )
-    }
+    // const tank = await Tank.findOneAndUpdate(
+    //   { _id: id },
+    //   { $push: { volumes: newVolume._id } },
+    //   { new: true }
+    // )
+    // }
 
-    for (let i = 0; i < 500; i++) {
-      addVs()
-    }
+    // for (let i = 0; i < 500; i++) {
+    //   addVs()
+    // }
 
   return res.status(200).json(tank);
 });
