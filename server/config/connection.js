@@ -3,7 +3,7 @@ require("dotenv").config();
 
 mongoose
   .connect(
-    process.env.MONGODB_URI || MONGO_LOCAL,
+    process.env.MONGO_LOCAL || process.env.MONGODB_URI,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
