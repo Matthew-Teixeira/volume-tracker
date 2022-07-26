@@ -228,7 +228,7 @@ const VolumeAddition = () => {
                       type="number"
                       step={0.01}
                       className="bg-indigo-50 px-4 py-2 outline-none rounded-md w-full"
-                      defaultValue={volumeData.totalVol}
+                      value={volumeData.totalVol}
                       required
                     />
                   </div>
@@ -245,7 +245,7 @@ const VolumeAddition = () => {
                       type="number"
                       step={0.01}
                       className="bg-indigo-50 px-4 py-2 outline-none rounded-md w-full"
-                      defaultValue={volumeData.waterVol}
+                      value={volumeData.waterVol}
                       required
                     />
                   </div>
@@ -261,7 +261,7 @@ const VolumeAddition = () => {
                       type="number"
                       step={0.01}
                       className="bg-indigo-50 px-4 py-2 outline-none rounded-md w-full"
-                      defaultValue={volumeData.productVol}
+                      value={volumeData.productVol}
                       required
                     />
                   </div>
