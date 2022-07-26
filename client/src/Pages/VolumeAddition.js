@@ -229,6 +229,7 @@ const VolumeAddition = () => {
                       step={0.01}
                       className="bg-indigo-50 px-4 py-2 outline-none rounded-md w-full"
                       value={volumeData.totalVol}
+                      onChange={e => setVolumeData(e.target.volumeData.totalVol)}
                       required
                     />
                   </div>
@@ -246,6 +247,7 @@ const VolumeAddition = () => {
                       step={0.01}
                       className="bg-indigo-50 px-4 py-2 outline-none rounded-md w-full"
                       value={volumeData.waterVol}
+                      onChange={e => setVolumeData(e.target.volumeData.waterVol)}
                       required
                     />
                   </div>
@@ -262,6 +264,7 @@ const VolumeAddition = () => {
                       step={0.01}
                       className="bg-indigo-50 px-4 py-2 outline-none rounded-md w-full"
                       value={volumeData.productVol}
+                      onChange={e => setVolumeData(e.target.volumeData.productVol)}
                       required
                     />
                   </div>
